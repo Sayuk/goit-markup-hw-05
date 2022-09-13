@@ -59,8 +59,8 @@
       <!--btn-->
       <section class="section-btn all-section">
         <h1 class="section-title">Ефективні рішення для <br />вашого бізнесу</h1>
-        <button class="btn" type="button">Замовити послугу</button>
-      </section>
+        <button data-modal-open class="btn" type="button" >Замовити послугу</button>
+      </section>    
       <!--about -->
       <section class="description all-section">
         <div class="container">
@@ -607,5 +607,19 @@
         </div>
       </div>
     </footer>
+    <!--Modal Window-->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        
+        <button class="modal-btn" data-modal-close type="button">
+          <svg width="30" height="30">
+            <use >
+x
+            </use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
