@@ -28,10 +28,17 @@ body {
 .link {
   text-decoration: none;
   color: currentColor;
-
+  /*animation*/
+  transition-property:fill, color ;
+  transition-duration:250ms ;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
+.link:hover,
+.link:focus {
+  fill: var(--akcent-cl);
+  color: var(--akcent-cl);
+}
 
 .list {
   list-style: none;
@@ -108,11 +115,9 @@ body {
   color: #212121;
   margin-right: 50px;
   position: relative;
-  /*animation*/
-  transition-property:fill, color ;
-  transition-duration:250ms ;
-  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+
   }
+
 .header-nav-list-item::after {
   content: '';
   position: absolute;
@@ -159,12 +164,7 @@ margin-right: 10px;
   margin-right: 0;
 }
 
-.header-nav-list-contacti-item:hover,
-.header-nav-list-item:hover,
-.link:focus {
-  fill: var(--akcent-cl);
-  color: var(--akcent-cl);
-}
+
 .footer {
   background-color: #2f303a;
   padding-top: 60px;
@@ -530,21 +530,7 @@ border-radius: 4px;
   margin: 0 0 50px 0;
   padding-left: 0;
 }
-.porfolio-btn-list{
-    /*animation*/
-  transition-property:box-shadow, border-radius;
-  transition-duration:250ms;
-  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-  
-}
-.porfolio-btn-list:hover,
-.porfolio-btn-list:focus {
-  box-shadow: 0px 2px 2px 0px #0000001F, 0px 1px 2px 0px #00000014, 0px 3px 1px 0px #0000001A;
-  border-radius: 4px;
- 
 
-
-}
 .porfolio-btn {
   padding: 6px 22px;
   font-family: var(--main-font);
@@ -554,6 +540,17 @@ border-radius: 4px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+   /*animation*/
+  transition-property:color, background-color, box-shadow, border-radius;
+  transition-duration:250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+.porfolio-btn:hover,
+.porfolio-btn:focus {
+  background-color: var(--akcent-cl);
+  color: var(--main-background-cl);
+  box-shadow: 0px 2px 2px 0px #0000001F, 0px 1px 2px 0px #00000014, 0px 3px 1px 0px #0000001A;
+  border-radius: 4px;
 }
 .porfolio-btn:active {
   background-color: var(--akcent-cl);
@@ -564,20 +561,28 @@ border-radius: 4px;
   flex-wrap: wrap;
   gap: var(--indent);
 }
-.portfolio-list-img {
-}
-.portfolio-list-img-item {
-  flex-basis: calc((100% - var(--indent) * (var(--items)-1)) / var(--items));
-    /*animation*/
-  transition-property:box-shadow, border-radius;
+
+.porfolio-link{
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+  /*animation*/
+  transition-property:box-shadow;
   transition-duration:250ms;
   transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-list-img-item:hover,
-.portfolio-list-img-item:focus{
-  box-shadow: 1px 4px 6px 0px #00000029, 0px 4px 4px 0px #0000000F, 0px 1px 1px 0px #0000001F;
-  border-radius: 6px 4px 1px ;
+.portfolio-list-img-item {
+  flex-basis: calc((100% - var(--indent) * (var(--items)-1)) / var(--items));
 }
+.porfolio-link:hover,
+.porfolio-link:focus,
+.portfolio-list-img-item:hover .overlay
+{
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 6px 4px 1px ;
+  transform: translateY(0);
+}
+
 .portfolio-thumb{
   position: relative;
   overflow: hidden;
@@ -593,17 +598,12 @@ border-radius: 4px;
   justify-items: center;
   align-items: center;
   padding: 63px 24px;
-
-
   background-color: rgba(33, 150, 243, 0.9);
  /*animation*/
  transition-property:transform;
  transition-duration:250ms;
  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 
-}
-.portfolio-thumb:hover .overlay{
-  transform: translateY(0);
 }
 .overlay-desc{
   color: var(--main-background-cl);
@@ -614,17 +614,24 @@ border-radius: 4px;
   letter-spacing: 0.03em;
 }
 .portfolio-info {
+
   padding:20px 24px;
   border-right: 1px solid #eee ;
   border-bottom: 1px solid #eee ;
   border-left: 1px solid #eee ;
+  transition-property:transform;
+  transition-duration:250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .portfolio-tittle {
+  color: var(--main-text-cl);
   margin: 0;
   font-weight: 700;
   font-size: 18px;
   line-height: calc(36 / 18);
   letter-spacing: 0.06em;
+  
 }
 .portfolio-name {
   margin: 0;
