@@ -28,17 +28,31 @@ body {
 .link {
   text-decoration: none;
   color: currentColor;
+  
+}
+.header-animation-nav{
+/*animation*/
+transition-property: color ;
+transition-duration:250ms ;
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-animation-nav:hover,
+.header-animation-nav:focus {
+  color: var(--akcent-cl);
+}
+.header-animation-contact{
   /*animation*/
   transition-property:fill, color ;
   transition-duration:250ms ;
   transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link:hover,
-.link:focus {
+  }
+.header-animation-contact:hover,
+.header-animation-contact:focus {
   fill: var(--akcent-cl);
   color: var(--akcent-cl);
 }
+
 
 .list {
   list-style: none;
@@ -504,8 +518,7 @@ border-radius: 4px;
 .clients{
   fill: currentColor;
 }
-.clients:hover,
-.clients:focus,
+
 .clients-link:hover,
 .clients-link:focus {
   color: var(--akcent-cl);
@@ -541,7 +554,7 @@ border-radius: 4px;
   border-radius: 4px;
   cursor: pointer;
    /*animation*/
-  transition-property:color, background-color, box-shadow, border-radius;
+  transition-property:color, background-color, box-shadow;
   transition-duration:250ms;
   transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -574,20 +587,23 @@ border-radius: 4px;
 .portfolio-list-img-item {
   flex-basis: calc((100% - var(--indent) * (var(--items)-1)) / var(--items));
 }
+
 .porfolio-link:hover,
 .porfolio-link:focus,
-.portfolio-list-img-item:hover .overlay
+.porfolio-link:hover .overlay ,
+.porfolio-link:focus .overlay
 {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   border-radius: 6px 4px 1px ;
   transform: translateY(0);
 }
-
 .portfolio-thumb{
+  
   position: relative;
   overflow: hidden;
 }
 .overlay{
+  
   position: absolute;
   top: 0;
   left: 0;
